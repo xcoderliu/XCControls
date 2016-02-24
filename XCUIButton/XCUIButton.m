@@ -7,7 +7,6 @@
 //
 
 #import "XCUIButton.h"
-#import<POP.h>
 
 @interface XCUIButton ()
 {
@@ -18,19 +17,16 @@
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     [self buttonSizeLarge];
     [super touchesBegan:touches withEvent:event];
-    WLLog(@"touch begin");
 }
 
 - (void)touchesCancelled:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     [self resetButtonsize];
     [super touchesCancelled:touches withEvent:event];
-    WLLog(@"touch cancel");
 }
 
 - (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     [self resetButtonsize];
     [super touchesEnded:touches withEvent:event];
-    WLLog(@"touch end");
 }
 
 - (void)buttonSizeLarge {
