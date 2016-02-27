@@ -14,6 +14,34 @@
 @end
 
 @implementation XCUIButton
+@synthesize popW;
+@synthesize popH;
+
+- (id)init {
+    if (self = [super init]) {
+        [self initialize];
+    }
+    return self;
+}
+
+- (id)initWithCoder:(NSCoder *)aDecoder {
+    if (self = [super initWithCoder:aDecoder]) {
+        [self initialize];
+    }
+    return self;
+}
+
+- (id)initWithFrame:(CGRect)frame {
+    if (self = [super initWithFrame:frame]) {
+        [self initialize];
+    }
+    return self;
+}
+
+- (void) initialize {
+    popW = popH = 0.9;
+}
+
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     [self buttonSizeLarge];
     [super touchesBegan:touches withEvent:event];
@@ -31,18 +59,12 @@
 
 - (void)buttonSizeLarge {
     [UIView animateWithDuration:0.4 delay:0.0 usingSpringWithDamping:0.4 initialSpringVelocity:0.2 options:UIViewAnimationOptionAllowUserInteraction | UIViewAnimationOptionBeginFromCurrentState animations:^{
-        self.transform = CGAffineTransformScale(CGAffineTransformIdentity, 1.2f, 1.2f);
-        if (self.superview.tag == kXCUIBottonBkimgtag && [self.superview.class isSubclassOfClass:[UIImageView class]]) {
-            self.superview.transform = CGAffineTransformScale(CGAffineTransformIdentity, 1.2f, 1.2f);
-        }
+        self.transform = CGAffineTransformScale(CGAffineTransformIdentity, popW, popH);
     } completion:nil];
 }
 
 - (void)resetButtonsize {    [UIView animateWithDuration:0.4 delay:0.2 usingSpringWithDamping:0.4 initialSpringVelocity:0.5 options:UIViewAnimationOptionAllowUserInteraction | UIViewAnimationOptionBeginFromCurrentState animations:^{
-        self.transform = CGAffineTransformIdentity;
-        if (self.superview.tag == kXCUIBottonBkimgtag && [self.superview.class isSubclassOfClass:[UIImageView class]]) {
-            self.superview.transform = CGAffineTransformIdentity;
-        }
-    } completion:nil];
+    self.transform = CGAffineTransformIdentity;
+} completion:nil];
 }
 @end

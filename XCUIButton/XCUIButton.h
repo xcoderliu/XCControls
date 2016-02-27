@@ -7,7 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
-static const int kXCUIBottonBkimgtag = 1012;
 @interface XCUIButton : UIButton
 - (void)resetButtonsize;
+/**
+ *  放大水平的倍数
+ */
+@property (nonatomic,assign)CGFloat popW;
+/**
+ *  放大的垂直倍数
+ */
+@property (nonatomic,assign)CGFloat popH;
 @end
