@@ -1,6 +1,5 @@
 //
 //  FunctionMacro.h
-//  FSMeetingClient
 //
 //  Created by XCoderLiu on 2/22/16.
 //
