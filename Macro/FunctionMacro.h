@@ -8,7 +8,6 @@
 #ifndef FunctionMacro_h
 #define FunctionMacro_h
 
-#import "FMCommonString.h"
 
 //调试Log
 #ifdef DEBUG
